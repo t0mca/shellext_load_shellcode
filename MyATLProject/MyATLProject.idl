@@ -1,0 +1,36 @@
+﻿// MyATLProject.idl: MyATLProject 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 生成类型库(MyATLProject.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(82adc02d-ef7f-4365-adcc-7bb49e754633),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IMyATLSimpleObject : IDispatch
+{
+};
+[
+	uuid(10c74815-1ff0-477c-9aa6-5f16e2551a19),
+	version(1.0),
+]
+library MyATLProjectLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(bb7041cd-0273-4668-9ea2-f3223ae5ad1e)
+	]
+	coclass MyATLSimpleObject
+	{
+		[default] interface IMyATLSimpleObject;
+	};
+};
+
+import "shobjidl.idl";
